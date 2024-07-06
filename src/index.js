@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
-import store from "./redux/store";
+import store from "api/store";
 import { HashRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 

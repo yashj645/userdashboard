@@ -1,8 +1,9 @@
-import Home from "./routes/Home";
-import Details from "./routes/Details";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Home from "routes/Home";
+import Details from "routes/Details";
+import NotFound from "routes/NotFound";
 import "./App.css";
-import NotFound from "./routes/NotFound";
 
 function App() {
   return (

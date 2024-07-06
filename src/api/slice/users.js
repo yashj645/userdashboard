@@ -26,24 +26,24 @@ const usersSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchUsers.pending, (state, action) => {
+    builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
     });
-    builder.addCase(fetchUsers.rejected, (state, action) => {
+    builder.addCase(fetchUsers.rejected, (state) => {
       state.isError = true;
     });
-    builder.addCase(fetchUserDetail.pending, (state, action) => {
+    builder.addCase(fetchUserDetail.pending, (state) => {
       state.userDetail.isLoading = true;
     });
     builder.addCase(fetchUserDetail.fulfilled, (state, action) => {
       state.userDetail.isLoading = false;
       state.userDetail.data = action.payload;
     });
-    builder.addCase(fetchUserDetail.rejected, (state, action) => {
+    builder.addCase(fetchUserDetail.rejected, (state) => {
       state.userDetail.isError = true;
     });
   },
