@@ -35,8 +35,6 @@ function Home() {
         break
     }
 
-    console.log('inputData', inputData)
-
     return inputData
   }, [sort])
 
@@ -73,7 +71,7 @@ function Home() {
         setVisibleData(sortDataCallback(latestFilteredData));
       }
     }
-  }, [searchValue, userData, visibleData, sortDataCallback]);
+  }, [searchValue, userData, sortDataCallback]);
 
   const handleDebounceInput = debounce(
     (event) => handleInputChange(event),
