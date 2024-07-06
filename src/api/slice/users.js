@@ -13,6 +13,13 @@ export const fetchUserDetail = createAsyncThunk(
   }
 );
 
+export const fetchUserPosts = createAsyncThunk("fetchUserPosts", async (id) => {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+  );
+  return res?.json();
+});
+
 const usersSlice = createSlice({
   name: "users",
   initialState: {
@@ -20,6 +27,11 @@ const usersSlice = createSlice({
     data: [],
     isError: false,
     userDetail: {
+      isLoading: false,
+      data: [],
+      isError: false,
+    },
+    userPosts: {
       isLoading: false,
       data: [],
       isError: false,
@@ -45,6 +57,16 @@ const usersSlice = createSlice({
     });
     builder.addCase(fetchUserDetail.rejected, (state) => {
       state.userDetail.isError = true;
+    });
+    builder.addCase(fetchUserPosts.pending, (state) => {
+      state.userPosts.isLoading = true;
+    });
+    builder.addCase(fetchUserPosts.fulfilled, (state, action) => {
+      state.userPosts.isLoading = false;
+      state.userPosts.data = action.payload;
+    });
+    builder.addCase(fetchUserPosts.rejected, (state) => {
+      state.userPosts.isError = true;
     });
   },
 });

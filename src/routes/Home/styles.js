@@ -60,17 +60,20 @@ const BodyItem = styled("li")({
 const Profile = styled("div")({
   height: "60px",
   width: "60px",
+  minWidth: "60px",
   borderRadius: "100%",
   background: "#d2d2d2",
 
   [`@media screen and (max-width: 500px)`]: {
     height: "40px",
     width: "40px",
+    minWidth: "40px",
   },
 
   [`@media screen and (max-width: 374px)`]: {
     height: "30px",
     width: "30px",
+    minWidth: "30px",
   },
 });
 
@@ -130,6 +133,11 @@ const Link = styled("a")({
 
   "&:nth-child(even)": {
     backgroundColor: "#fff",
+  },
+
+  [`@media screen and (max-width: 900px)`]: {
+    borderLeft: "none",
+    borderRight: "none",
   },
 });
 
