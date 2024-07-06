@@ -54,7 +54,11 @@ const Body = styled("ul")({
 const BodyItem = styled("li")({
   display: "flex",
   alignItems: "center",
-  padding: "15px",
+  padding: "15px 25px",
+
+  [`@media screen and (max-width: 500px)`]: {
+    padding: "15px",
+  },
 });
 
 const Profile = styled("div")({
