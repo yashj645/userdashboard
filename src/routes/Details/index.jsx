@@ -32,7 +32,7 @@ function Details() {
     return (
       <>
         <Styled.Header>
-          <a href="/">Users</a>
+        <a href="/userdashboard">Users</a>
           <span>&gt; &nbsp;{userDetailData.name}</span>
         </Styled.Header>
         <Styled.CardWrapper>
