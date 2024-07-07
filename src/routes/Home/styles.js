@@ -67,6 +67,10 @@ const Profile = styled("div")({
   minWidth: "60px",
   borderRadius: "100%",
   background: "#d2d2d2",
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 
   [`@media screen and (max-width: 500px)`]: {
     height: "40px",
@@ -78,6 +82,19 @@ const Profile = styled("div")({
     height: "30px",
     width: "30px",
     minWidth: "30px",
+  },
+});
+
+const Initials = styled("h4")({
+  position: "absolute",
+  fontSize: "22px",
+
+  [`@media screen and (max-width: 500px)`]: {
+    fontSize: "16px",
+  },
+
+  [`@media screen and (max-width: 374px)`]: {
+    fontSize: "12px",
   },
 });
 
@@ -154,6 +171,7 @@ export default {
   Body,
   BodyItem,
   Profile,
+  Initials,
   TextData,
   Name,
   Username,

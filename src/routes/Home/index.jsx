@@ -126,7 +126,11 @@ function Home() {
             {visibleData.map((item) => (
               <Styled.Link key={item.id} href={`#/details/${item.id}`}>
                 <Styled.BodyItem>
-                  <Styled.Profile></Styled.Profile>
+                  <Styled.Profile>
+                    <Styled.Initials>
+                      {item.name.split("")[0]}{" "}{item.name.split(" ")[1][0]}
+                    </Styled.Initials>
+                  </Styled.Profile>
                   <Styled.TextData>
                     <Styled.Name>{item.name}</Styled.Name>
                     <Styled.Username>{item.username}</Styled.Username>
