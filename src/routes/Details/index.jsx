@@ -11,10 +11,6 @@ function Details() {
   const {data: userDetailData, isLoading: isDetailLoading} = useSelector((state) => state.users.userDetail)
   const {data: userPosts, isLoading: isPostLoading} = useSelector((state) => state.users.userPosts)
 
-  console.log('userDetailData', userDetailData)
-
-  console.log('userPosts', userPosts)
-
   useEffect(() => {
     if (urlParam) {
       dispatch(fetchUserDetail(urlParam))
